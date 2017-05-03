@@ -12,5 +12,3 @@ that's it
 You can run the app in the browser directly from the file or some localhost.
 
 You can run test from terminal by cd-ing into directory and running karma start.
-
-bradktracy@gmail.com if there are any questions.
