@@ -1,0 +1,25 @@
+{
+  "name": "conway",
+  "version": "1.0.0",
+  "description": "conways game of life",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "brad tracy",
+  "license": "ISC",
+  "dependencies": {
+    "bower": "^1.8.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "jasmine": "^2.6.0",
+    "jasmine-core": "^2.6.1",
+    "karma": "^1.6.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "mocha": "^3.3.0",
+    "phantomjs": "^2.1.7"
+  }
+}
