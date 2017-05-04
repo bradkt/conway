@@ -1,4 +1,4 @@
-##Conways Game of Life Kata
+## Conways Game of Life Kata
 
 The application is run on Angular js and testing is performed with Karma and Jasmine.
 
