@@ -1,6 +1,5 @@
 describe('LifeApp Test Suite', function(){
 
-
     describe('Testing ViewCtrl', function () {
 
         it('should initialize with gridRows, gridColumns, gameBoard', function() {

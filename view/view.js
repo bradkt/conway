@@ -12,6 +12,7 @@ function ViewCtrl ($scope, $timeout) {
     $scope.gridColumns= 6;
 
     $scope.update = function () {
+        $scope.gameBoard = [];
         for (var i = 0; i < $scope.gridColumns; i++) {
             $scope.gameBoard.push([i]);
             $scope.createRows(i);
@@ -78,24 +79,27 @@ function ViewCtrl ($scope, $timeout) {
             $scope.neighborhood.right = $scope.gameBoard[col+1][row];
 
         // based on a border cell that should have 5 neighbors
-        } else if (col === 0 && (row > 0 && row < $scope.gridRows - 1)) { //check the borders and not the corners
+        } else if (col === 0 && (row > 0 && row < $scope.gridRows - 1)) {
             $scope.neighborhood.upCenter = $scope.gameBoard[col][row-1];
             $scope.neighborhood.upRight = $scope.gameBoard[col+1][row-1];
             $scope.neighborhood.downCenter = $scope.gameBoard[col][row+1];
             $scope.neighborhood.downRight = $scope.gameBoard[col+1][row+1];
             $scope.neighborhood.right = $scope.gameBoard[col+1][row];
+
         } else if (col === $scope.gridColumns - 1 && (row > 0 && row < $scope.gridRows - 1)) {
             $scope.neighborhood.upLeft = $scope.gameBoard[col-1][row-1];
             $scope.neighborhood.upCenter = $scope.gameBoard[col][row-1];
             $scope.neighborhood.downLeft = $scope.gameBoard[col-1][row+1];
             $scope.neighborhood.downCenter = $scope.gameBoard[col][row+1];
             $scope.neighborhood.left = $scope.gameBoard[col-1][row];
+
         } else if (row === 0 && (col > 0 && col < $scope.gridColumns - 1)) {
             $scope.neighborhood.downLeft = $scope.gameBoard[col-1][row+1];
             $scope.neighborhood.downCenter = $scope.gameBoard[col][row+1];
             $scope.neighborhood.downRight = $scope.gameBoard[col+1][row+1];
             $scope.neighborhood.left = $scope.gameBoard[col-1][row];
             $scope.neighborhood.right = $scope.gameBoard[col+1][row];
+
         } else if (row === $scope.gridRows - 1 && (col > 0 && col < $scope.gridColumns - 1)) {
             $scope.neighborhood.upLeft = $scope.gameBoard[col-1][row-1];
             $scope.neighborhood.upCenter = $scope.gameBoard[col][row-1];
@@ -115,7 +119,7 @@ function ViewCtrl ($scope, $timeout) {
                 $scope.neighborhood.downCenter = $scope.gameBoard[col][row+1];
                 $scope.neighborhood.left = $scope.gameBoard[col-1][row];
             }
-            if(row === $scope.gridRows - 1 && col === 0){
+            if(col === 0 && row === $scope.gridRows - 1){
                 $scope.neighborhood.upCenter = $scope.gameBoard[col][row-1];
                 $scope.neighborhood.upRight = $scope.gameBoard[col+1][row-1];
                 $scope.neighborhood.right = $scope.gameBoard[col+1][row];
